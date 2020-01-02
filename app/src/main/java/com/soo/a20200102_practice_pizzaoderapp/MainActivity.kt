@@ -2,10 +2,13 @@ package com.soo.a20200102_practice_pizzaoderapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.soo.a20200102_practice_pizzaoderapp.adapters.PizzaStoreAdapter
 import com.soo.a20200102_practice_pizzaoderapp.datas.PizzaStore
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
+    var pizzaStoreAdapter:PizzaStoreAdapter? = null
     var pizzaStoreList = ArrayList<PizzaStore>()
 
 
@@ -24,6 +27,9 @@ class MainActivity : BaseActivity() {
 
     override fun setValues() {
         addPizzaStores()
+
+        pizzaStoreAdapter = PizzaStoreAdapter(mContext, R.layout.pizza_store_list_item, pizzaStoreList)
+        pizzaStoreListView.adapter = pizzaStoreAdapter
     }
 
     fun addPizzaStores() {
