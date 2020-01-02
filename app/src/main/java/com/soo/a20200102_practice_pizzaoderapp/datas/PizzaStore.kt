@@ -1,6 +1,8 @@
 package com.soo.a20200102_practice_pizzaoderapp.datas
 
-class PizzaStore(storeName:String, phoneNum:String, logoUrl:String) {
+import java.io.Serializable
+
+class PizzaStore(storeName:String, phoneNum:String, logoUrl:String):Serializable {
 
     var storeName = storeName
     var phoneNum = phoneNum

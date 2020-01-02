@@ -32,7 +32,7 @@
         android:text="가게이름"/>
 
     <TextView
-        android:id="@+id/storeName"
+        android:id="@+id/storeNameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="가게이름 나올 자리"

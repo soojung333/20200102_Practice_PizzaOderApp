@@ -1,5 +1,6 @@
 package com.soo.a20200102_practice_pizzaoderapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.soo.a20200102_practice_pizzaoderapp.adapters.PizzaStoreAdapter
@@ -21,7 +22,13 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+        pizzaStoreListView.setOnItemClickListener { parent, view, position, id ->
+            val ClickedStore = pizzaStoreList.get(position)
 
+            val intent = Intent(mContext, PizzaStoreDetailActivity::class.java)
+            intent.putExtra("store", ClickedStore)
+            startActivity(intent)
+        }
 
     }
 
